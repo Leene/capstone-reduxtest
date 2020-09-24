@@ -1,3 +1,15 @@
+
+
+
+:root {
+   
+    --dark: #333;
+    --light: #F0F6F8;
+    --white: #FFFBFA;
+    --primary: #0039C1;
+    --secondary: #666666;
+}
+
 .App {
   text-align: center;
 }
@@ -13,16 +25,7 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+
 
 .App-link {
   color: #61dafb;

@@ -6,7 +6,6 @@ import Button from "./Button"
 
 export default function GameArea(){
     return (<Gamearea>
-        <Title>Emmet Typing Game</Title>
         <h2>GameArea</h2>
         {Store_text()}
         {Button()}
@@ -17,19 +16,14 @@ export default function GameArea(){
     )
 }
 
-
-
-
 const Gamearea = styled.div`
   text-align: center;
-  
+top: 0;  
 `;
 const Title = styled.h1`
-
   height: 5rem;
   text-align: center;
   margin-top:-30px;
-  border: 1px solid #000;
   font-size: 20px;
   
 `;
