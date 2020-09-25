@@ -1,8 +1,10 @@
 export const COLORS = {
     text: 'black',
-    lightText: 'white',
+    lightText: 'rgb(255, 255, 255)',
     primary: '#456783',
-    secondary: '#285515'
+    secondary: '#555',
+    background1: 'rgb(162, 203, 199)',
+    background2: 'rgb(205, 151, 151)' /* rosa*/
   }
 
   /* const SIZES = [

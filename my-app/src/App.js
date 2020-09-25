@@ -42,8 +42,8 @@ export default function App() {
  
     background: linear-gradient(
         0deg,
-        rgba(162, 203, 199, 1) 9%,
-        rgba(205, 151, 151, 1) 100% /* rosa*/
+        ${COLORS.background1} 9%,
+        ${COLORS.background2} 100%
     );
     height: 100vh;
     font-size: calc(10px + 2vmin);
@@ -69,8 +69,8 @@ const Title = styled.h1`
   text-align: center;
   margin-top:2px;
   font-size: 20px;
-  color: rgba(255, 255, 255, 0.3)
- 
+  color:${COLORS.lightText}; 
+  opacity:0.6;
 `
 
 const Button = styled.button`
@@ -78,7 +78,7 @@ const Button = styled.button`
  
 `
 const NavButton = styled.button`
-background-color: ${COLORS.primary};
+background-color: ${COLORS.secondary};
 height: 3em;
 border:none;
 border-radius: 0 0 100px 100px;
