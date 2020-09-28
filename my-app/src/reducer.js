@@ -1,17 +1,28 @@
 import { BUG_ADDED, BUG_REMOVED, BUG_RESOLVED } from './actionTypes'
+
+import { exercises } from "./data/exercises.json"
+import CreateOrder from "./components/CreateOrder"
 //oder bei sehr vielen ActionTypes:
 // import * as actions from './actionTypes'
 
 let lastId = 0
 
 export default function reducer (state =[], action) { // =[] leeres Array dient als initial State damit der store anfangs nicht undefiend ist 
+    
+    let order = CreateOrder();
+    let hint = exercises[order[0]].emmet;
+  //console.log("order:" + order)
+
     if (action.type === BUG_ADDED)
     return [
         ...state,
         {
-            id: ++lastId,
-            description: action.payload.description,
-            resolved:false 
+            score: 111,
+            life: 2,
+            rightAnswer: hint 
+            //id: ++lastId,
+            //description: action.payload.description,
+           // resolved:false 
         }
     ];
  else if (action.type === BUG_REMOVED)
