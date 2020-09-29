@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { exercises } from "../data/exercises.json";
+import { COLORS } from '../constants';
 //import CreateOrder from "./CreateOrder";
 //import CreateScore from "./CreateScore";
 
@@ -29,7 +30,7 @@ export default function GameInterface() {
         <HintButton onClick={() => setShowText(!showText)}>HINT:</HintButton>
         <HintTextDiv>{showText && <HintText>{hint}</HintText>}</HintTextDiv>
       </Hint>
-      <Life>{lifecon()}</Life>;
+      <Life>{lifecon()}</Life>
     </>
   );
 }
@@ -47,7 +48,7 @@ function lifecon() {
 const HintTextDiv = styled.div`
   width: 75%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(${COLORS.light}, 0.2);
   border-radius: 0 20px 20px 0;
 `;
 

@@ -18,10 +18,6 @@ export default function GameArea(){
   let order = CreateOrder();
   console.log("order:" + order)
   
-
-
-
-
     return (  
     <Gamefield>
         {/* {GameField(inputText, setInputText, hint)} */}
@@ -30,9 +26,8 @@ export default function GameArea(){
           {/* {GameInterface(hint, inputText, setInputText, scoreState)} */}
           {GameInterface()}
           <KeyboardStyle>
-          {Keyboard(order)}
             {/* {Keyboard(inputText, setInputText, order)} */}
-            {Keyboard()}
+          {Keyboard(order)}
           </KeyboardStyle>
         </Gameinterface>
       </Gamefield>
@@ -61,7 +56,7 @@ const Gameinterface = styled.div`
 `;
 
 const KeyboardStyle = styled.section`
-  margin-top: -1vh;
+  margin-top: 3px;
   user-select: none;
   grid-area: keyboard;
   background-color: gainsboro;

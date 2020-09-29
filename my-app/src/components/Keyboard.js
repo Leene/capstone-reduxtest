@@ -57,14 +57,14 @@ export default function Keyboard(order) {
       setInputText(inputText + symbol);
     }
     console.log("clicked");
-  };
+  };*/
   return (
     <>
       <KeysSide>{renderLeftKeys()}</KeysSide>
       <KeysMiddle>{renderMiddleKeys()}</KeysMiddle>
       <KeysSide>{renderRightKeys()}</KeysSide>
     </>
-  );*/
+  );
 } 
 export const typedText = [];
 export function clickedKey(symbol) {

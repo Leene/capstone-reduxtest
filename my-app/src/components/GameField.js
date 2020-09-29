@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { exercises } from "../data/exercises.json";
 //import CreateOrder from "./CreateOrder";
-//import TextArea from "./TextArea";
+import TextArea from "./TextArea";
+import { COLORS } from '../constants';
+
 import { clickedKey, getTypedText, typedText } from "./Keyboard";
 
 //export default function GameField(inputText, setInputText, hint) {
@@ -28,31 +30,30 @@ import { clickedKey, getTypedText, typedText } from "./Keyboard";
           <code>{newText}</code>
         </Textbox>
         {/* {TextArea(getTypedText(), inputText, setInputText, hint)} */}
+       <div>{ TextArea()}</div>
       </Box>
     </Boxarea>
   );
 }
 
 const Boxarea = styled.div`
- // border: solid 1px pink;
   height: auto;
   width: auto;
   margin-top: 20vh;
 `;
 
 const Box = styled.div`
-  background-color: rgba(255, 255, 255, 0.338);
-  height: auto;
+  background-color: rgba(${COLORS.light}, 0.3);
   width: 80vw;
   margin: 0 0 20px 0;
   border-radius: 1rem;
-  box-shadow: 2px 2px 5px 6px rgba(58, 32, 10, 0.1);
+  box-shadow: 2px 2px 5px 6px ${COLORS.shadow};
   padding: 10px;
 `;
 
 const Textbox = styled.div`
-  background-color: rgba(27, 24, 87, 0.728);
+  background-color: rgba(${COLORS.violet}, 0.6);
   margin: 0px 0px;
-  color: rgb(152, 236, 255);
+  color: rgb(${COLORS.boxtext});
   padding: 10px 3px;
 `;
