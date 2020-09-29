@@ -29,14 +29,20 @@ export default function GameInterface() {
         <HintButton onClick={() => setShowText(!showText)}>HINT:</HintButton>
         <HintTextDiv>{showText && <HintText>{hint}</HintText>}</HintTextDiv>
       </Hint>
-      <Life>
-        <LifeIcon alt="" src={life} />
-        <LifeIcon alt="" src={life} />
-        <LifeIcon alt="" src={life} />
-      </Life>
+      <Life>{lifecon()}</Life>;
     </>
   );
 }
+
+function lifecon() {
+  const amount = store.getState()[0].life;
+  const rows = [];
+  for (var i = 0; i < amount; i++) {
+    rows.push(<LifeIcon alt="" src={life} key={i} />);
+  }
+  return <>{rows}</>;
+}
+
 
 const HintTextDiv = styled.div`
   width: 75%;
