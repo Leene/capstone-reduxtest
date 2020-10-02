@@ -10,6 +10,9 @@ import Home from './components/Home'
 import Details from './components/Details'
 // import GlobalStyles from './components/GlobalStyles'
 
+
+
+
 const home_icon = "https://img.icons8.com/material-rounded/24/ffffff/home.png"
 const start_icon =
     "https://img.icons8.com/ios-filled/24/ffffff/circled-play.png"
@@ -33,6 +36,8 @@ export default function App() {
           <Details path= "/details/"></Details>
            {/* <GameArea path= "/gamearea/:id"></GameArea> */}
         </Router>
+
+       
     </Main>
   );
 }

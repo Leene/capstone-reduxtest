@@ -2,19 +2,34 @@ import React from 'react'
 import styled from "styled-components"
 import { COLORS } from '../constants';
 
+import { bugAdded, bugResolved, inputAdded } from '../actions'
+import store from '../store'
+
+
 export default function Home(){
     return (
     <Main>
         <h1>Emmet Typing Game</h1>
+        <button onClick={klick} > butoon</button>
+        <button>{daten}</button>
         <Text>Ein Spiel zum Erlernen von Emmet-Befehlen.</Text>
         <URLBtn
                 href="https://docs.emmet.io/cheat-sheet/"
                 target="_blank"
                 rel="noopener noreferrer">Emmet-Befehle
        </URLBtn>
+    
        <Text><small>(zur offiziellen Dokumentation der Emmet-Befehle)</small></Text>
+
     </Main>
     )
+}
+
+const daten = toString(store.getState())
+
+const klick = () => {
+  store.dispatch(inputAdded("möp"))
+
 }
 
 const Main = styled.section`

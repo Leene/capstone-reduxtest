@@ -16,6 +16,15 @@ export function bugAdded(description) {
 */
 
 
+export const inputAdded = input => ({
+    
+    type: actions.BUG_ADDED,
+    payload: {
+        input
+
+    }
+})
+
 export const bugAdded = description => ({
     
         type: actions.BUG_ADDED,

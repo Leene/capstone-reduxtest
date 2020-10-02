@@ -19,9 +19,12 @@ export default function reducer (state =[], action) { // =[] leeres Array dient 
         {
             score: 111,
             life: 2,
+            description: action.payload.description,
+            input: action.payload.input,
             rightAnswer: hint 
+            
             //id: ++lastId,
-            //description: action.payload.description,
+            
            // resolved:false 
         }
     ];

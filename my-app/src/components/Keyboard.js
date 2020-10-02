@@ -4,7 +4,12 @@ import { signs } from "../data/keyboard_symbols.json";
 import { exercises } from "../data/exercises.json";
 import styled from "styled-components";
 
+import { bugAdded, bugResolved } from '../actions'
+import store from '../store'
+
 //export default function Keyboard(inputText, setInputText, order) {
+  const inputText = ""
+  const setInputText = ""
 export default function Keyboard(order) {
   //const [counter, setCounter] = useState("0");
 
@@ -19,7 +24,7 @@ export default function Keyboard(order) {
   }
   function renderRightKeys() {
     const rightSide = signs.slice(12, 24);
-    console.log("rightSide: " + rightSide);
+   // console.log("rightSide: " + rightSide);
     return rightSide.map((key) => (
       // <KeysSideDiv onClick={() => clickedKey(key.symbol)} key={key.symbol}>
       <KeysSideDiv /* onClick={() => handleClick(key.symbol)} */ key={key.symbol}>
@@ -30,23 +35,23 @@ export default function Keyboard(order) {
 
   //let btnTextArray = exercises[order[0]].btntext;
   let btnTextArray = exercises[4].btntext;
-  console.log("btnTextArray" + btnTextArray);
+ // console.log("btnTextArray" + btnTextArray);
   //const [middleBtnText, setMiddleBtnText] = useState(false);
 
   function renderMiddleKeys() {
-    console.log("exercises: " + exercises[4].btntext);
+    //console.log("exercises: " + exercises[4].btntext);
 
     const middleSide = exercises[order[0]].btntext;
-    console.log("middleSide: " + middleSide);
+   // console.log("middleSide: " + middleSide);
 
     return middleSide.map((key) => (
-      <KeysMiddleDiv /*onClick={ () => handleClick(key) }*/ key={key}>
+      <KeysMiddleDiv onClick={ () => handleClick(key) } key={key}>
         {key}
       </KeysMiddleDiv>
     ));
   }
-
-  /* const handleClick = (symbol) => {
+/*
+   const handleClick = (symbol) => {
     if (inputText === "Welcher Emmet-Befehl passt?") {
       setInputText(" ");
       setInputText(symbol);
@@ -57,7 +62,28 @@ export default function Keyboard(order) {
       setInputText(inputText + symbol);
     }
     console.log("clicked");
-  };*/
+  };
+*/
+
+const handleClick = (symbol) => {
+  if (inputText === "Welcher Emmet-Befehl passt?") {
+    setInputText(" ");
+    setInputText(symbol);
+  } else if (inputText === "Deine neue Eingabe ...") {
+    setInputText(" ");
+    setInputText(symbol);
+  } else {
+    setInputText(inputText + symbol);
+    store.dispatch(bugAdded("Bug 1"))
+    console.log ("Store changed!", store.getState());
+  }
+  console.log("clicked");
+};
+
+
+
+
+
   return (
     <>
       <KeysSide>{renderLeftKeys()}</KeysSide>

@@ -4,6 +4,9 @@ import { exercises } from "../data/exercises.json";
 import CreateOrder from "./CreateOrder";
 //import CreateScore from "./CreateScore";
 
+import { bugAdded, bugResolved } from '../actions'
+import store from '../store' 
+
 import { clickedKey, getTypedText, typedText } from "./Keyboard";
 
 let noteText = getTypedText();
@@ -21,16 +24,8 @@ export default function TextArea() {
   const handleClick = () => {
     //CreateScore(inputText, hint);
 
-    // const handleClick = () => {
-    //   if (inputText === "Welcher Emmet-Befehl passt?") {
-    //     setInputText(" ");
-    //     setInputText(btnInputText);
-    //   } else if (inputText === "Deine neue Eingabe ...") {
-    //     setInputText(" ");
-    //     setInputText(btnInputText);
-    //   } else {
-    //     setInputText(inputText + btnInputText);
-    //   }
+    store.dispatch(bugAdded("Bug 1"))
+    console.log ("Store changed!", store.getState());
 
     console.log("clicked");
   };
@@ -48,7 +43,7 @@ export default function TextArea() {
     <>
       <Textarea>{inputText}</Textarea>
       <button onClick={handleDeleteBtnClick}>{btnDeleteText}</button>
-      <button onClick={handleClick}>{btnInputText}</button>
+      <button onClick={handleClick}>{btnInputText}</button> 
     </>
   );
 }
