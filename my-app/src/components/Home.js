@@ -11,7 +11,7 @@ export default function Home(){
     <Main>
         <h1>Emmet Typing Game</h1>
         <button onClick={klick} > butoon</button>
-        <button>{daten}</button>
+        <textarea>{daten}</textarea>
         <Text>Ein Spiel zum Erlernen von Emmet-Befehlen.</Text>
         <URLBtn
                 href="https://docs.emmet.io/cheat-sheet/"
@@ -25,8 +25,8 @@ export default function Home(){
     )
 }
 
-const daten = toString(store.getState())
-
+const daten  = store.getState()
+ 
 const klick = () => {
   store.dispatch(inputAdded("möp"))
 
