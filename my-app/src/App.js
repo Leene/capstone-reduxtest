@@ -24,7 +24,7 @@ export default function App() {
         <Header>
          
             <LinkStyled to ="/"><NavButton><img alt="" src={home_icon} /></NavButton></LinkStyled>
-            <Title>Emmet Typing Game</Title>
+            <Title>Test: Emmet Typing Game</Title>
 
             <LinkStyled to ="/gamearea"><NavButton><img alt="" src={start_icon} /></NavButton></LinkStyled>
           </Header>
